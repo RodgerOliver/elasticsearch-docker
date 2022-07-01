@@ -1,17 +1,5 @@
 # EK stack (Elasticsearch and Kibana)
 
-> [Oficial Kibana](https://www.elastic.co/guide/en/kibana/8.3/docker.html)
->
-> [Oficial Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/8.3/docker.html)
->
-> If there are any errors with Elasticsearch see [this](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-prerequisites).
->
-> [Docker Compose 1](https://github.com/justmeandopensource/elk/blob/master/docker/docker-compose-v7.9.2.yml)
->
-> [Docker Compose 2](https://github.com/shazforiot/Elasticsearch-logstash-Kibana-Docker-Compose/blob/main/docker-compose.yml)
->
-> The drive needs to have at least 10GB of free space for the elasticsearch container to start.
-
 ## Instructions
 
 ```sh
@@ -28,3 +16,12 @@ docker-compose exec kibana bin/kibana-verification-code
 # generate the password for elastic
 docker-compose exec elasticsearch bin/elasticsearch-reset-password -u elastic
 ```
+
+## References
+
+- [Set Password and user with Docker-compose](https://discuss.elastic.co/t/set-password-and-user-with-docker-compose/225075)
+- [Oficial Kibana](https://www.elastic.co/guide/en/kibana/8.3/docker.html)
+- [Oficial Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/8.3/docker.html)
+- [Linux prerequisites](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-prerequisites).
+- [Docker Compose Example 1](https://github.com/shazforiot/Elasticsearch-logstash-Kibana-Docker-Compose/blob/main/docker-compose.yml)
+- [Docker Compose Example 2](https://github.com/justmeandopensource/elk/blob/master/docker/docker-compose-v7.9.2.yml)
