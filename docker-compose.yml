@@ -18,8 +18,8 @@ services:
       memlock:
         soft: -1
         hard: -1
-    # volumes:
-      # - elasticsearch-data:/usr/share/elasticsearch/data
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
       # - ./.docker/elasticsearch/:/usr/share/elasticsearch/config/
     networks:
       - app-network
@@ -35,17 +35,17 @@ services:
       # ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
     depends_on:
       - elasticsearch
-    # volumes:
-      # - kibana-data:/usr/share/kibana/data
+    volumes:
+      - kibana-data:/usr/share/kibana/data
       # - ./.docker/kibana/:/usr/share/kibana/config/
     networks:
       - app-network
 
-# volumes:
-  # kibana-data:
-    # driver: local
-  # elasticsearch-data:
-    # driver: local
+volumes:
+  kibana-data:
+    driver: local
+  elasticsearch-data:
+    driver: local
 
 networks:
   app-network:
