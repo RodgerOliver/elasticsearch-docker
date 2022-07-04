@@ -19,6 +19,7 @@ docker-compose exec elasticsearch bin/elasticsearch-reset-password -u elastic
 
 ## References
 
+- [Elastic on Docker Compose with Security](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-compose-file)
 - [Set Password and user with Docker-compose](https://discuss.elastic.co/t/set-password-and-user-with-docker-compose/225075)
 - [Oficial Kibana](https://www.elastic.co/guide/en/kibana/8.3/docker.html)
 - [Oficial Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/8.3/docker.html)
