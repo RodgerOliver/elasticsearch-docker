@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   setup:
-    container_name: setup
+    container_name: ${COMPOSE_PROJECT_NAME}_setup
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION}
     volumes:
       - certs:/usr/share/elasticsearch/config/certs
@@ -55,7 +55,7 @@ services:
       - app-network
 
   es01:
-    container_name: elasticsearch
+    container_name: ${COMPOSE_PROJECT_NAME}_es01
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION}
     ports:
       - ${ES_PORT}:9200
@@ -100,7 +100,7 @@ services:
       - app-network
 
   kibana:
-    container_name: kibana
+    container_name: ${COMPOSE_PROJECT_NAME}_kibana
     image: docker.elastic.co/kibana/kibana:${ELASTIC_VERSION}
     ports:
       - ${KIBANA_PORT}:5601
