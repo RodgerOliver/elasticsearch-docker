@@ -1,20 +1,26 @@
 # EK stack (Elasticsearch and Kibana)
 
+[![version](https://img.shields.io/badge/Elasticsearch-8.3.1-FEC514)](https://www.elastic.co/elasticsearch)
+[![version](https://img.shields.io/badge/Kibana-8.3.1-F04E98)](https://www.elastic.co/kibana)
+
+## About
+
+This project is a guide to start using the Elastic Stack with docker compose.
+
+It can be run as a single node mode or as a multi-node cluster.
+
 ## Instructions
 
 ```sh
-# configure kernel
+# configure kernel on linux
+# If not on linux, check the reference 5
 sudo vim /etc/sysctl.conf
 > vm.max_map_count=262144
 sysctl -w vm.max_map_count=262144
 
-# navigate to localhost:5601
-# generate kibana token
-docker-compose exec elasticsearch bin/elasticsearch-create-enrollment-token -s kibana
-# generate the verification code for kibana
-docker-compose exec kibana bin/kibana-verification-code
-# generate the password for elastic
-docker-compose exec elasticsearch bin/elasticsearch-reset-password -u elastic
+cp .env.example .env
+
+docker-compose up -d
 ```
 
 ## References
@@ -23,7 +29,7 @@ docker-compose exec elasticsearch bin/elasticsearch-reset-password -u elastic
 - [Set Password and user with Docker-compose](https://discuss.elastic.co/t/set-password-and-user-with-docker-compose/225075)
 - [Oficial Kibana](https://www.elastic.co/guide/en/kibana/8.3/docker.html)
 - [Oficial Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/8.3/docker.html)
-- [Linux prerequisites](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-prerequisites).
+- [System prerequisites](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-prerequisites).
 
 ---
 
